@@ -16,12 +16,14 @@ public class Snake : MonoBehaviour
     bool ate = false;
     public GameObject tailPrefab;
 
+    public GameManager myManager;
+
     // Start is called before the first frame update
     void Start()
     {
         //OPTION: Randomize the direction of the snake like our Pong Ball when it starts
         //Call MoveSnake() every 300ms(0.3 seconds) to move the snake
-        InvokeRepeating("MoveSnake", 0.3f, 0.3f);
+        InvokeRepeating("MoveSnake", 0.1f, 0.1f);
         //InvokeRepeating("methodName", time, repeatRate)
         //methodName: name of method/function to invoke
         //time: start invoking after n seconds
@@ -102,6 +104,7 @@ public class Snake : MonoBehaviour
             ate = true;
             //Debug.Log("food eaten");
             Destroy(collision.gameObject); //Remove the Food
+            myManager.FoodEaten();
 
         }
     }
