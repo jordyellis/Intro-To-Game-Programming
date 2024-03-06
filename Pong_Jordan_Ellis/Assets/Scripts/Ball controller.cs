@@ -29,6 +29,13 @@ public class Ballcontroller : MonoBehaviour
             transform.position = ballStartPos;
             Launch();
         }
+
+        else if (Input.GetKey(KeyCode.Space))
+        {
+            //Stop ball from moving after it hits wall and manual relaunch
+            rbBall.velocity = Vector3.zero;
+            Launch();
+        }
         
     }
 

@@ -36,4 +36,7 @@ public class GameManager : MonoBehaviour
     {
        player2Score++;
     }
-}
+    
+    
+}   
+   
