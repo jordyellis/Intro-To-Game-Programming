@@ -370,7 +370,6 @@ GameObject:
   m_Component:
   - component: {fileID: 478999089}
   - component: {fileID: 478999088}
-  - component: {fileID: 478999090}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -407,18 +406,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &478999090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 478999087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d3e3305a38ae4271a40d213e0c689e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &493819080
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,7 +916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25e1903b52124f0f8a8cf49ba2eb3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer1Goal: 1
+  isPlayer1Goal: 0
   myManager: {fileID: 478999088}
 --- !u!212 &945213168
 SpriteRenderer:
@@ -1499,7 +1486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25e1903b52124f0f8a8cf49ba2eb3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer1Goal: 0
+  isPlayer1Goal: 1
   myManager: {fileID: 478999088}
 --- !u!212 &1621188116
 SpriteRenderer:
