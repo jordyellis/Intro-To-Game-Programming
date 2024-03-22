@@ -18,7 +18,11 @@ public class Ballcontroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Launch(); 
+        //Manually Launch Ball at Start
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Launch();
+        }
     }
 
     // Update is called once per frame
