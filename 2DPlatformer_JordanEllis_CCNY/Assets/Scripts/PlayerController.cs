@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 100; //set and declare the maxHealth
     public int currentHealth; //declare currentHealthm, set in Start(), going to fluctuate as the game plays
     public HealthBar healthBarScript; //reference the HealthBar script, set in inspector
+    
+    //Flip player sprite
+    public bool flippedLeft;
+    public bool facingRight;
 
     // Start is called before the first frame update
     void Start()
@@ -49,11 +53,15 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("A pressed"); //print to console
             newPos.x -= playerSpeed; //affect x coordinate, move left
+            facingRight = false;
+            Flip(facingRight);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             //Debug.Log("D pressed"); //print to console
             newPos.x += playerSpeed; //affect x coordinate, move right
+            facingRight = true;
+            Flip(facingRight);
         }
         transform.position = newPos; //update player object with the new position
     }
@@ -93,5 +101,20 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth -= damage; //reduce current health by damage amount
         healthBarScript.SetHealth(currentHealth); // set the SetHealth(int) to the currentHealth value from this script
+    }
+
+    void Flip(bool facingRight)
+    {
+      if (facingRight && flippedLeft)
+      {
+        transform.Rotate(0, -180, 0);
+        flippedLeft = true;
+      }
+
+      else if (facingRight && flippedLeft)
+      {
+        transform.Rotate(0, 180, 0);
+        facingRight = false;
+      }
     }
 }
