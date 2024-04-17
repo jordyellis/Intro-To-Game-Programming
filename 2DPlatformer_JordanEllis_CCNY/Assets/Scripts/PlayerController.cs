@@ -53,14 +53,14 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("A pressed"); //print to console
             newPos.x -= playerSpeed; //affect x coordinate, move left
-            facingRight = false;
+            facingRight = true;
             Flip(facingRight);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             //Debug.Log("D pressed"); //print to console
             newPos.x += playerSpeed; //affect x coordinate, move right
-            facingRight = true;
+            facingRight = false;
             Flip(facingRight);
         }
         transform.position = newPos; //update player object with the new position
@@ -103,18 +103,18 @@ public class PlayerController : MonoBehaviour
         healthBarScript.SetHealth(currentHealth); // set the SetHealth(int) to the currentHealth value from this script
     }
 
-    void Flip(bool facingRight)
+    void Flip(bool facingLeft)
     {
-      if (facingRight && flippedLeft)
+      if (facingLeft && !flippedLeft)
       {
         transform.Rotate(0, -180, 0);
         flippedLeft = true;
       }
 
-      else if (facingRight && flippedLeft)
+      if (!facingLeft && flippedLeft)
       {
         transform.Rotate(0, 180, 0);
-        facingRight = false;
+        flippedLeft = false;
       }
     }
 }
