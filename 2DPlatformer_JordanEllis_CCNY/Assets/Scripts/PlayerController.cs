@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
     
     //Flip player sprite
     public bool flippedLeft;
-    public bool facingRight;
+    public bool facingLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -53,15 +54,15 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("A pressed"); //print to console
             newPos.x -= playerSpeed; //affect x coordinate, move left
-            facingRight = true;
-            Flip(facingRight);
+            facingLeft = true;
+            Flip(facingLeft);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             //Debug.Log("D pressed"); //print to console
             newPos.x += playerSpeed; //affect x coordinate, move right
-            facingRight = false;
-            Flip(facingRight);
+            facingLeft = false;
+            Flip(facingLeft);
         }
         transform.position = newPos; //update player object with the new position
     }
@@ -117,4 +118,13 @@ public class PlayerController : MonoBehaviour
         flippedLeft = false;
       }
     }
+
+    void GameOver()
+    {
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene("EndScene");
+        }
+    }
+    
 }
