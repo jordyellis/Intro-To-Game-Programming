@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     public bool flippedLeft;
     public bool facingLeft;
 
+    public AudioSource enemyAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,10 +92,11 @@ public class PlayerController : MonoBehaviour
         }
 
         //When colliding with a dangerous object (lava, enemy, etc.)
-        if (collision.gameObject.tag == "Lava")
+        if (collision.gameObject.tag == "Enemy")
         {
             //Debug.Log("hit lava rock");
             TakeDamage(2); //call TakeDamage(), reduce health by 2
+            enemyAudio.Play();
         }
     }
 
