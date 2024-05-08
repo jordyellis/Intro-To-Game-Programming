@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
       }
     }
 
-    void GameOver()
+    public void GameOver()
     {
         if (currentHealth <= 0)
         {
