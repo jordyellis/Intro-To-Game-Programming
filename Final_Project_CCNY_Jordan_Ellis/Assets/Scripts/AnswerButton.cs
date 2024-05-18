@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class AnswerButton : MonoBehaviour
 {
@@ -27,11 +28,15 @@ public class AnswerButton : MonoBehaviour
     {
         if(isCorrect)
         {
-            Debug.Log("CORRECT ANSWER");
+            //Debug.Log("CORRECT ANSWER");
+            
+
         }
         else
         {
-            Debug.Log("WRONG ANSWER");
+            //Debug.Log("WRONG ANSWER");
+            MoveToScene();
+
         }
 
         // Get the next question if there are more in the list
@@ -40,5 +45,10 @@ public class AnswerButton : MonoBehaviour
             // Generate a new question
             questionSetup.Start();
         }
+    }
+
+      public void MoveToScene()
+    {
+      SceneManager.LoadScene("EndScene");
     }
 }
