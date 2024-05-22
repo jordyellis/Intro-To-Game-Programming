@@ -29,7 +29,8 @@ public class AnswerButton : MonoBehaviour
         if(isCorrect)
         {
             //Debug.Log("CORRECT ANSWER");
-            
+            //Move to next question and add points to score
+            //Add set amount of points
 
         }
         else
