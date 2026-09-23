@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37255b29b09c048dca93ac635a9adb2b, type: 3}
   m_Name: Question 1
   m_EditorClassIdentifier: 
-  question: The 2010 movie, "The Socal Network", was about the founding of what
+  question: The 2010 movie, "The Socal Network", was about the founding of what social
+    media site?
   answers:
   - Facebook
   - Twitter
